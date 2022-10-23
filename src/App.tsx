@@ -1,3 +1,10 @@
+import { GlobalStyled } from './style/global';
+
 export function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      <GlobalStyled />
+      <h1>Hello World</h1>;
+    </>
+  );
 }
