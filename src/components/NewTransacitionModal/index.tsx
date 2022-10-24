@@ -37,8 +37,9 @@ export const NewTransactionModal: React.FC<NewTransactionModalProps> = ({
 
         <TransactionTypeContainer>
           <RadioBox
-            isActive={type === 'deposit'}
             type="button"
+            activeColor="green"
+            isActive={type === 'deposit'}
             onClick={() => {
               setType('deposit');
             }}
@@ -47,8 +48,9 @@ export const NewTransactionModal: React.FC<NewTransactionModalProps> = ({
             <span>Entrada</span>
           </RadioBox>
           <RadioBox
-            isActive={type === 'withdraw'}
             type="button"
+            isActive={type === 'withdraw'}
+            activeColor="red"
             onClick={() => {
               setType('withdraw');
             }}
