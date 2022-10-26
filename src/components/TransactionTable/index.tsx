@@ -3,7 +3,7 @@ import { TransactionContext } from '../../TransactionContext';
 import { Container } from './styles';
 
 export const TransactionTable: React.FC = () => {
-  const { transaction } = useContext(TransactionContext);
+  const { transactions } = useContext(TransactionContext);
   return (
     <Container>
       <table>
@@ -17,8 +17,8 @@ export const TransactionTable: React.FC = () => {
         </thead>
 
         <tbody>
-          {transaction.map(
-            ({ id, title, type, category, amount, createAt }) => (
+          {transactions.map(
+            ({ id, title, type, category, amount, createdAt }) => (
               <tr key={id}>
                 <td>{title}</td>
                 <td className={type}>
@@ -28,9 +28,7 @@ export const TransactionTable: React.FC = () => {
                   }).format(amount)}
                 </td>
                 <td>{category}</td>
-                <td>
-                  {new Intl.DateTimeFormat('pt-BR').format(new Date(createAt))}
-                </td>
+                <td>{new Intl.DateTimeFormat('pt-BR').format(new Date())}</td>
               </tr>
             ),
           )}
